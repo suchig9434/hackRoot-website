@@ -4,26 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HackRoot — Team</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="preloader"><div class="spinner"></div></div>
+
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">HackRoot</a>
-      <nav class="nav">
+      <nav class="nav" id="nav-menu">
         <a href="#home">Home</a>
         <a href="#team">Team</a>
         <a href="#projects">Projects</a>
         <a href="#timeline">Timeline</a>
         <a href="#contact" class="btn-outline">Join</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="nav-toggle" id="nav-toggle">☰</button>
     </div>
   </header>
 
+  <canvas id="particles"></canvas>
+
   <main>
-    <!-- HERO -->
     <section id="home" class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -34,130 +36,87 @@
             <a href="#projects" class="btn-ghost">See Projects</a>
           </div>
         </div>
-        <div class="hero-media">
-          <div class="project-preview">
-            <h4>Project Idea: AI Fake News & Scam Detector</h4>
-            <p>ML classification + GenAI explanation engine — Flask backend + React dashboard.</p>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- TEAM -->
     <section id="team" class="section">
       <div class="container">
         <h2>Team HackRoot</h2>
-        <p class="muted">Roles & responsibilities (from our team plan)</p>
         <div class="grid team-grid">
-          <!-- card: Prateek (AI/ML + Backend Lead) -->
-          <article class="card">
-            <img src="images/prateek.jpg" alt="Prateek" class="avatar"/>
+          <article class="card" data-member="prateek">
+            <img src="images/prateek.jpg" class="avatar" />
             <h3>Prateek</h3>
-            <p class="role">AI/ML Engineer + Backend Lead</p>
-            <ul>
-              <li>Build ML & AI models</li>
-              <li>Flask backend APIs & deployment</li>
-              <li>GenAI integrations & prompt engineering</li>
-            </ul>
-            <button class="btn-link" data-person="prateek">More</button>
+            <p>AI/ML Engineer + Backend Lead</p>
           </article>
 
-          <!-- card: Suchi -->
-          <article class="card">
-            <img src="images/suchi.jpg" alt="Suchi" class="avatar"/>
+          <article class="card" data-member="suchi">
+            <img src="images/suchi.jpg" class="avatar" />
             <h3>Suchi</h3>
-            <p class="role">Frontend Lead</p>
-            <ul>
-              <li>UI/UX & responsive layouts</li>
-              <li>Frontend API integration</li>
-              <li>Visual consistency & design</li>
-            </ul>
-            <button class="btn-link" data-person="suchi">More</button>
+            <p>Frontend Lead</p>
           </article>
 
-          <!-- card: Krishna -->
-          <article class="card">
-            <img src="images/krishna.jpg" alt="Krishna" class="avatar"/>
+          <article class="card" data-member="krishna">
+            <img src="images/krishna.jpg" class="avatar" />
             <h3>Krishna</h3>
-            <p class="role">Database Engineer + Backend Support</p>
-            <ul>
-              <li>SQL schema & optimization</li>
-              <li>Database connectivity</li>
-              <li>Backend support & testing</li>
-            </ul>
-            <button class="btn-link" data-person="krishna">More</button>
+            <p>Database Engineer</p>
           </article>
 
-          <!-- card: Lakshya -->
-          <article class="card">
-            <img src="images/lakshya.jpg" alt="Lakshya" class="avatar"/>
+          <article class="card" data-member="lakshya">
+            <img src="images/lakshya.jpg" class="avatar" />
             <h3>Lakshya</h3>
-            <p class="role">MERN Developer</p>
-            <ul>
-              <li>React components & routing</li>
-              <li>Frontend-backend integration</li>
-              <li>Performance optimization</li>
-            </ul>
-            <button class="btn-link" data-person="lakshya">More</button>
+            <p>MERN Developer</p>
           </article>
 
-          <!-- card: Shivi -->
-          <article class="card">
-            <img src="images/shivi.jpg" alt="Shivi" class="avatar"/>
+          <article class="card" data-member="shivi">
+            <img src="images/shivi.jpg" class="avatar" />
             <h3>Shivi</h3>
-            <p class="role">Frontend Support + QA</p>
-            <ul>
-              <li>UI fixes & testing</li>
-              <li>Documentation & presentation</li>
-            </ul>
-            <button class="btn-link" data-person="shivi">More</button>
+            <p>Frontend Support + QA</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+
     <section id="projects" class="section alt">
       <div class="container">
         <h2>Projects</h2>
         <div class="grid projects-grid">
           <article class="project-card">
             <h3>AI Fake News & Scam Detection</h3>
-            <p>ML classifier + GenAI explanation, URL scanner, Flask backend, React dashboard.</p>
-            <a class="btn-ghost" href="#">Read Brief</a>
+            <p>ML classifier + GenAI explanation + React dashboard.</p>
           </article>
 
           <article class="project-card">
-            <h3>Healthcare Medical Report Summarizer</h3>
-            <p>GenAI summarization, risk analysis, secure backend for patient data.</p>
-            <a class="btn-ghost" href="#">Read Brief</a>
+            <h3>Healthcare Report Summarizer</h3>
+            <p>GenAI summarization + risk analysis.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Timeline -->
     <section id="timeline" class="section">
       <div class="container">
-        <h2>Timeline & Milestones</h2>
+        <h2>Timeline</h2>
         <div class="timeline">
-          <div class="step"><strong>Dec–Jan</strong><span>Learning Phase: Python, ML, HTML/CSS/JS, SQL, React basics.</span></div>
-          <div class="step"><strong>Feb–Mar</strong><span>Dummy projects: chatbot, URL scanner, AI text classifier.</span></div>
-          <div class="step"><strong>April</strong><span>Hackathon: finalize project, polish, deploy & present.</span></div>
+          <div class="step"><strong>Dec–Jan:</strong> Learning</div>
+          <div class="step"><strong>Feb–Mar:</strong> Dummy Projects</div>
+          <div class="step"><strong>April:</strong> Hackathon Build</div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="section alt">
-      <div class="container contact-inner">
+      <div class="container">
         <h2>Join / Contact</h2>
         <form id="joinForm" class="contact-form">
           <input name="name" placeholder="Your name" required />
           <input name="email" type="email" placeholder="Email" required />
-          <input name="github" placeholder="GitHub / LinkedIn (optional)" />
+          <input name="github" placeholder="GitHub / LinkedIn" />
           <textarea name="message" rows="4" placeholder="How you'd like to help"></textarea>
-          <button class="btn-primary" type="submit">Send</button>
+          <button class="btn-primary">Send</button>
         </form>
       </div>
     </section>
@@ -165,11 +124,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>HackRoot — Follow our journey on <a href="#">GitHub</a></p>
-      <small>Meeting cadence: Weekly check-ins (Dec–Jan) → 2x/week (Feb–Mar) → Daily (April).</small>
+      <p>HackRoot — Follow us on GitHub</p>
     </div>
   </footer>
 
-  <script src="Js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

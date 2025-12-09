@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HackRoot — Team</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <div id="preloader"><div class="spinner"></div></div>
+  
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="spinner"></div>
+    <p>Launching HackRoot...</p>
+  </div>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#">HackRoot</a>
+      <a class="brand glow" href="#">HackRoot</a>
       <nav class="nav" id="nav-menu">
         <a href="#home">Home</a>
         <a href="#team">Team</a>
@@ -23,14 +33,16 @@
     </div>
   </header>
 
+  <!-- PARTICLES -->
   <canvas id="particles"></canvas>
 
+  <!-- HERO -->
   <main>
     <section id="home" class="hero">
-      <div class="container hero-inner">
+      <div class="container hero-inner fade-in">
         <div class="hero-copy">
-          <h1>HackRoot — Build. Learn. Win.</h1>
-          <p class="lead">A focused hackathon team building AI-first, production-ready projects.</p>
+          <h1 class="glow-text">HackRoot — Build. Learn. Win.</h1>
+          <p class="lead">A futuristic hackathon team creating AI-first, production-ready innovations.</p>
           <div class="hero-ctas">
             <a href="#team" class="btn-primary">Meet the Team</a>
             <a href="#projects" class="btn-ghost">See Projects</a>
@@ -39,79 +51,88 @@
       </div>
     </section>
 
+    <!-- TEAM -->
     <section id="team" class="section">
       <div class="container">
-        <h2>Team HackRoot</h2>
+        <h2 class="section-title">Team HackRoot</h2>
         <div class="grid team-grid">
-          <article class="card" data-member="prateek">
+
+          <article class="card hover-card" data-member="prateek">
             <img src="images/prateek.jpg" class="avatar" />
             <h3>Prateek</h3>
             <p>AI/ML Engineer + Backend Lead</p>
           </article>
 
-          <article class="card" data-member="suchi">
+          <article class="card hover-card" data-member="suchi">
             <img src="images/suchi.jpg" class="avatar" />
             <h3>Suchi</h3>
             <p>Frontend Lead</p>
           </article>
 
-          <article class="card" data-member="krishna">
+          <article class="card hover-card" data-member="krishna">
             <img src="images/krishna.jpg" class="avatar" />
             <h3>Krishna</h3>
             <p>Database Engineer</p>
           </article>
 
-          <article class="card" data-member="lakshya">
+          <article class="card hover-card" data-member="lakshya">
             <img src="images/lakshya.jpg" class="avatar" />
             <h3>Lakshya</h3>
             <p>MERN Developer</p>
           </article>
 
-          <article class="card" data-member="shivi">
+          <article class="card hover-card" data-member="shivi">
             <img src="images/shivi.jpg" class="avatar" />
             <h3>Shivi</h3>
             <p>Frontend Support + QA</p>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- MODAL -->
     <div id="modal" class="modal hidden">
       <div class="modal-content" id="modal-content"></div>
     </div>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section alt">
       <div class="container">
-        <h2>Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="grid projects-grid">
-          <article class="project-card">
+
+          <article class="project-card glow-card">
             <h3>AI Fake News & Scam Detection</h3>
             <p>ML classifier + GenAI explanation + React dashboard.</p>
           </article>
 
-          <article class="project-card">
+          <article class="project-card glow-card">
             <h3>Healthcare Report Summarizer</h3>
             <p>GenAI summarization + risk analysis.</p>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- TIMELINE -->
     <section id="timeline" class="section">
       <div class="container">
-        <h2>Timeline</h2>
+        <h2 class="section-title">Timeline</h2>
         <div class="timeline">
-          <div class="step"><strong>Dec–Jan:</strong> Learning</div>
-          <div class="step"><strong>Feb–Mar:</strong> Dummy Projects</div>
-          <div class="step"><strong>April:</strong> Hackathon Build</div>
+          <div class="step">✨ <strong>Dec–Jan:</strong> Learning</div>
+          <div class="step">💡 <strong>Feb–Mar:</strong> Dummy Projects</div>
+          <div class="step">🚀 <strong>April:</strong> Hackathon Build</div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section alt">
       <div class="container">
-        <h2>Join / Contact</h2>
-        <form id="joinForm" class="contact-form">
+        <h2 class="section-title">Join / Contact</h2>
+        <form id="joinForm" class="contact-form glow-border">
           <input name="name" placeholder="Your name" required />
           <input name="email" type="email" placeholder="Email" required />
           <input name="github" placeholder="GitHub / LinkedIn" />
@@ -122,6 +143,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>HackRoot — Follow us on GitHub</p>
